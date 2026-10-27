@@ -1,0 +1,29 @@
+/* Mobile-first base. Desktop tweaks go in min-width media queries. */
+:root {
+  --text: #2b2730;
+  --muted: #6b6375;
+  --bg: #fffdfa;
+  --border: #e5e4e7;
+  --accent: #8a5a44;
+  font: 16px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-height: 100dvh; }
+img, video { max-width: 100%; display: block; }
+
+.container { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1rem; }
+
+button, input { font: inherit; }
+.btn {
+  display: inline-block; width: 100%; min-height: 48px; /* comfortable tap target */
+  padding: 0.75rem 1rem; border: 0; border-radius: 0.5rem;
+  background: var(--accent); color: #fff; text-align: center; text-decoration: none;
+}
+.input {
+  width: 100%; min-height: 48px; padding: 0.75rem; border: 1px solid var(--border);
+  border-radius: 0.5rem; background: #fff;
+}
