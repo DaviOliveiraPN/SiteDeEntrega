@@ -1,10 +1,13 @@
-import { Link } from "react-router";
+import { ButtonLink } from '../components/ui/Button';
+import { StatusScreen } from '../components/ui/StatusScreen';
 
 export default function NotFound() {
   return (
-    <main className="container">
-      <h1>Página não encontrada</h1>
-      <Link to="/">Voltar ao início</Link>
-    </main>
+    <StatusScreen eyebrow="Erro 404" title="Página não encontrada">
+      <p className="text-sm text-cream/70">O endereço pode ter sido digitado errado ou não existe mais.</p>
+      <ButtonLink to="/" variant="secondary" className="mt-4">
+        Voltar ao início
+      </ButtonLink>
+    </StatusScreen>
   );
 }
