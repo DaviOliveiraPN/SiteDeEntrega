@@ -1,26 +1,41 @@
-# Event Moments
+# Event Moments — MVP do convidado
 
-Entrega de fotos e vídeos de eventos. Veja `CLAUDE.md` para arquitetura e decisões.
+Front-end da entrega de fotos e vídeos, rodando só no navegador com **dados fictícios**.
+Arquitetura e decisões: veja `CLAUDE.md`.
 
-## Desenvolvimento local
+## Rodar
 
-Requisitos: Node 24, Docker (para o Supabase local).
+Requisito: Node 24.
 
 ```bash
 npm install
-npx supabase start          # Postgres, Auth e Edge Functions locais (Docker)
-npx supabase status         # copie API URL e anon key
-cp .env.example .env.local  # preencha com os valores acima
-cp supabase/functions/.env.example supabase/functions/.env
-npm run dev                 # http://127.0.0.1:5173
+npm run dev          # http://localhost:5173
 ```
+
+Códigos de teste (mock):
+
+| Código | Entrega | Estado |
+|---|---|---|
+| `AURORA2026K` | Marina & Lucas | ativa, ~80 arquivos |
+| `MAREVIVA7Q` | Júlia & Pedro | ativa, poucos arquivos |
+| `OUTONO48XZ` | Bia & Rafa | expirada |
+
+Cinco códigos errados em um minuto bloqueiam novas tentativas por 60 s (recarregue a página para zerar).
 
 ## Scripts
 
 | Comando | O que faz |
 |---|---|
-| `npm run dev` | SPA em modo desenvolvimento |
-| `npm test` | Testes unitários (Vitest) dos módulos de segurança |
-| `npm run typecheck` | TypeScript (SPA + `supabase/functions/_shared` + testes) |
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm test` | Testes unitários (Vitest) |
+| `npm run test:e2e` | E2E (Playwright, viewport de celular). Na 1ª vez: `npx playwright install chromium` |
+| `npm run typecheck` | TypeScript |
 | `npm run lint` | oxlint |
-| `npm run build` | Build estático para o Cloudflare Pages |
+| `npm run build` | Build estático (`dist/`) para o Cloudflare Pages |
+
+## Onde mexer
+
+- Dados fictícios: `src/mocks/` (gerados por `src/mocks/factory.ts`).
+- Troca para a API real: só `src/services/index.ts`.
+- Cores/tipografia: `src/theme/tokens.ts` + bloco `@theme` em `src/index.css` (um teste garante que estão iguais).
+- Vídeos de exemplo: `public/mock/videos/` (placeholders WebM; troque por MP4 H.264 para o iPhone).
