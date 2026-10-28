@@ -1,6 +1,7 @@
 {
   "name": "event-moments",
-  "private": true,
+  "private": false,
+  "homepage": "https://davioliveirapn.github.io/SiteDeEntrega/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
