@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="Estúdio Aurora">
+  <g fill="none" stroke="#F5F0EB" stroke-width="1.2">
+    <circle cx="32" cy="32" r="22"/>
+    <path d="M14 40h36M19 34a13 13 0 0 1 26 0"/>
+  </g>
+  <text x="66" y="30" fill="#F5F0EB" font-family="Cormorant, Georgia, serif" font-size="22" font-weight="300" letter-spacing="1">Estúdio Aurora</text>
+  <text x="67" y="46" fill="#AAB0B8" font-family="Inter, Arial, sans-serif" font-size="7" letter-spacing="3.2">FOTO · FILME · MEMÓRIA</text>
+</svg>
